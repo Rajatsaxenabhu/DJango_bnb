@@ -1,6 +1,8 @@
+version: '3'
 services:
   web:
     build: ./djangobnb_backend
+    image: "${DOCKER_USERNAME}/django_app:${IMAGE_TAG}"  # Jenkins variables used here
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./djangobnb_backend/:/usr/src/djangobnb_backend/
